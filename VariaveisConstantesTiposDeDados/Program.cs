@@ -83,12 +83,55 @@ namespace VariaveisConstantesTiposDeDados
             Console.WriteLine(check ? "Checked" : "Not checked");  // output: Checked
 
             Console.WriteLine(false ? "Checked" : "Not checked");  // output: Not checked
+
             Console.ReadKey();
+            #endregion
+
+            #region Tipos de enumeração (Enum)
+            /*
+          * O tipo Enum (enumeração) em C# é um tipo de valor especial que permite atribuir nomes amigáveis 
+          * a um conjunto de constantes numéricas inteiras. Em vez de memorizar que "1" significa "Pago" e "2" 
+          * significa "Cancelado", você usa nomes que tornam o código muito mais legível e menos propenso a erros.
+          * 
+          * Definição Básica
+          * Por padrão, os elementos de um enum começam no valor 0 e incrementam de um em um. 
+          * O tipo base padrão é int.
+          */
+
+
+            #endregion
+            #region Tipo String
+            /*
+             * Características Principais
+             *      Tipo de Referência: Diferente de um int ou bool, a string vive na Heap da memória.
+             *      Imutabilidade: Este é o conceito mais importante. Uma vez criada, uma string não pode ser alterada. 
+             *      Toda operação que parece "mudar" a string (como Replace ou ToUpper) na verdade cria uma nova string na memória.
+             *      Iterável: Você pode tratar uma string como uma coleção de caracteres (char). Ex: minhaString[0].
+             */
+            string texto = "Cadeia de Caracteres \n aqui é uam nova linha";
+            string testoDois = null;
+            string caminhoMelhor = @"C:\Users\Documentos"; // O @ mantém as barras como estão
+
+            /*
+             * Manipulação e Formatação
+             *   Existem três formas principais de "montar" strings:
+             *      Concatenação: string nomeCompleto = nome + " " + sobrenome; (Ineficiente em loops).
+             *      String.Format: string s = string.Format("Olá, {0}", nome);
+             *      Interpolação ($): A forma moderna e mais legível.
+             *      Literais Regulares e de Escape
+                        Usam aspas duplas e caracteres de escape (como \n para nova linha ou \t para tabulação).
+            */
+
+            string saudacao = $"Olá, {nome}. Hoje é {DateTime.Now:dd/MM/yyyy}";
+            Console.WriteLine(saudacao);
 
 
 
             #endregion
+            #region Tipos estrutura (struct)
 
+
+            #endregion
 
         }
     }
