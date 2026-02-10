@@ -79,6 +79,53 @@ namespace VariaveisConstantesTiposDeDados
             #endregion
 
             #region Tipo Boolean (Verdadeiro | Falso)
+            /*
+             * Valores possíveis: true ou false.
+             * Tamanho: Ocupa 1 byte (8 bits) de memória. Embora um bit bastasse, 
+               o processador lida melhor com endereços de bytes inteiros.
+             * Valor padrão: O valor default de um bool é false.
+             */
+            bool estaChovendo = true;
+            bool usuarioLogado = false;
+
+            //Operador Descrição   Exemplo
+            //5 == 5(true)
+            //5 != 3(true)
+            //10 > 20(false)
+            //10 <= 10(true)
+
+            // Operadores Lógicos
+            //Você pode combinar múltiplos valores booleanos para criar lógicas complexas usando a álgebra booleana.
+            //AND(&&): Retorna true apenas se ambos forem verdadeiros.
+            //OR(||): Retorna true se pelo menos um for verdadeiro.
+            //NOT(!): Inverte o valor(o que é true vira false).
+            bool temIdade = true;
+            bool temAutorizacao = false;
+
+            // Precisa de ambos para entrar
+            bool podeEntrar = temIdade && temAutorizacao; // false
+
+            /*
+             * O Booleano Anulável (bool?)
+             * Em cenários como integração com bancos de dados, você pode precisar de um terceiro estado: 
+                o desconhecido ou nulo. Para isso, usamos o bool?.
+             */
+
+            bool? respostaPesquisa = null; // Pode ser true, false ou null
+
+            if (respostaPesquisa == true)
+            {
+                // Código para Sim
+            }
+            else if (respostaPesquisa == false)
+            {
+                // Código para Não
+            }
+            else
+            {
+                // Usuário não respondeu
+            }
+
             bool check = true;
             Console.WriteLine(check ? "Checked" : "Not checked");  // output: Checked
 
@@ -87,19 +134,6 @@ namespace VariaveisConstantesTiposDeDados
             Console.ReadKey();
             #endregion
 
-            #region Tipos de enumeração (Enum)
-            /*
-          * O tipo Enum (enumeração) em C# é um tipo de valor especial que permite atribuir nomes amigáveis 
-          * a um conjunto de constantes numéricas inteiras. Em vez de memorizar que "1" significa "Pago" e "2" 
-          * significa "Cancelado", você usa nomes que tornam o código muito mais legível e menos propenso a erros.
-          * 
-          * Definição Básica
-          * Por padrão, os elementos de um enum começam no valor 0 e incrementam de um em um. 
-          * O tipo base padrão é int.
-          */
-
-
-            #endregion
             #region Tipo String
             /*
              * Características Principais
@@ -120,12 +154,31 @@ namespace VariaveisConstantesTiposDeDados
              *      Interpolação ($): A forma moderna e mais legível.
              *      Literais Regulares e de Escape
                         Usam aspas duplas e caracteres de escape (como \n para nova linha ou \t para tabulação).
+
+            Comparação e Busca
+Para comparar strings, evite usar apenas == se precisar ignorar maiúsculas/minúsculas. Use o método Equals:
+
+Busca: texto.Contains("termo"), texto.StartsWith("A"), texto.EndsWith("Z").
+
+Comparação Segura: string.Equals(s1, s2, StringComparison.OrdinalIgnoreCase);
+
+Limpeza: texto.Trim() (remove espaços em branco nas pontas).
             */
 
             string saudacao = $"Olá, {nome}. Hoje é {DateTime.Now:dd/MM/yyyy}";
-            Console.WriteLine(saudacao);
+            //Console.WriteLine(saudacao);
+
+            string json = """
+            {
+                "usuario": "Gemini",
+                "status": "Ativo"
+            }
+            """;
+            Console.WriteLine(json);
 
 
+
+            Console.ReadKey();
 
             #endregion
             #region Tipos estrutura (struct)
